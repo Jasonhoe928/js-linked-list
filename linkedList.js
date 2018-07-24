@@ -8,7 +8,7 @@ function linkedListGenerator(){
   let tail = null;
   let head = null;
 
- const getHead = () => {
+  const getHead = () => {
     return head;
   }
   
@@ -17,21 +17,21 @@ function linkedListGenerator(){
   }
   
   const add = function(element) {
+    console.log('head', head)
+    console.log('tail', tail)
     // console.log('value', element);
     let newNode = {
       value: element,
       next: null
-    }
+    };
     if(!head) {
       head = newNode,
       tail = newNode
     } else {
-      // console.log('tail next', head.next)
-      tail.next = newNode;
+      tail.next = newNode; //why tail = newNode, does tail have a .next property? Thought it would be head.next
       tail = newNode;
-      // console.log('tail next2', head.next)
     }
-    return tail;
+    return tail; //why returning tail?
   }
   
 const get = function (number) {
@@ -44,7 +44,7 @@ const get = function (number) {
     else {
       let targetNode = head;
       for (let i = 0; i < number; i++) {
-        if(targetNode.next === null) {
+        if(targetNode.next === null) { //where does head get a .next property from?
           return false;
         }
         targetNode = targetNode.next;
@@ -91,13 +91,9 @@ const get = function (number) {
 
 
   const remove = function (number) { //Jamie
-    // console.log('number', number)
-    
     let nodeToRemove = get(number);
-    // console.log('nodeToRemove', nodeToRemove);
     let previousNode = get(number-1);
     let newNode = get(number+1);
-    console.log('newNode', newNode);
     if(number < 0 || nodeToRemove === false) {
       return false;
     }
@@ -117,7 +113,7 @@ const get = function (number) {
 
   const insert = (value, number) => {
     let tarNode = get(number);
-    let preNode = get(index - 1);
+    let preNode = get(number - 1);
     let myNode = {
       value: value,
       next: null
