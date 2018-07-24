@@ -5,6 +5,35 @@
  */
 function linkedListGenerator(){
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   let tail = null;
   let head = null;
 
